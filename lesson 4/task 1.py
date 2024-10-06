@@ -1,14 +1,14 @@
 n = input()
-n = n.replace('!','.')
+n = n.replace('н','!')
 x = ''
 z = []
 for i in range(len(n)):
-    if n[i] == 'н':
+    if n[i] == '!':
         x += n[i]
     else:
         z.append(len(x))
         x = ''
-print(max(z))
+print(f'{n}, количество букв н: {max(z)}')
 
 s = '12(asdad)52!'
 x = []
