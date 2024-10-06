@@ -10,14 +10,20 @@ for i in range(len(n)):
         x = ''
 print(f'{n}, количество букв н: {max(z)}')
 
-s = '12(asdad)52!'
+s = input()
 x = []
 z = ''
-x.append(s.index('('))
-x.append(s.index(')'))
-for i in range(min(x),max(x)+1):
+s = s.replace('[','/')
+s = s.replace('(','/')
+s = s.replace('{','/')
+s = s.replace(']','+')
+s = s.replace(')','+')
+s = s.replace('}','+')
+x.append(s.index('/'))
+x.append(s.index('+'))
+for i in range(min(x)+1, max(x)):
     z += s[i]
-print(z[1:-1])
+print(z)
 
 s = input().split(' ')
 nach = 'а'
