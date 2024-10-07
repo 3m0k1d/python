@@ -14,7 +14,6 @@ if acosz > acosx:
     acosz = acosz
     res = [z1, z2]
 print(*res)
-
 def delit(x):
     if x < 2:
         return False
@@ -25,9 +24,8 @@ def delit(x):
 n = int(input('введите количество чисел: '))
 res = []
 for z in range(2, n+1):
-    b1n = ''
     if delit(z) == True:
-        if b1n+str(bin(z)[2:]) == b1n+str(bin(z)[2:])[::-1]:
+        if str(bin(z)[2:]) == str(bin(z)[2:])[::-1]:
             res.append(z)
             res.append(bin(z)[2:])
 print(res)
