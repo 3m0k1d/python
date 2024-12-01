@@ -1,10 +1,11 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
+import sys
 
 root = Tk()
 root.title("Text editor")
-root.geometry("800x500")
+root.geometry("1500x1000")
 root.resizable(False, False)
 
 root.grid_rowconfigure(index=0, weight=1)
@@ -23,8 +24,6 @@ def open_file():
             text_editor.delete("1.0", END)
             text_editor.insert("1.0", text)
 
-
-
 def save_file():
     filepath = filedialog.asksaveasfilename()
     if filepath != "":
@@ -32,11 +31,17 @@ def save_file():
         with open(filepath, "w") as file:
             file.write(text)
 
+def quit():
+    sys.exit()
 
 open_button = ttk.Button(text="Открыть файл", command=open_file)
-open_button.grid(column=0, row=1, sticky=NSEW, padx=10)
+open_button.grid(column=0, row=1, sticky=NSEW, padx=8)
 
 save_button = ttk.Button(text="Сохранить файл", command=save_file)
-save_button.grid(column=1, row=1, sticky=NSEW, padx=10)
+save_button.grid(column=1, row=1, sticky=NSEW, padx=8)
+
+quit_button = ttk.Button(text="Выход", command=quit)
+quit_button.grid(column=2, row=1, sticky=NSEW, padx=8)
+
 
 root.mainloop()
